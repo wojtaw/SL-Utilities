@@ -3,9 +3,7 @@ package slideslive.apps;
 import slideslive.xml.SlideRecord;
 import slideslive.xml.XMLParser;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.channels.Channels;
@@ -31,9 +29,52 @@ public class VegasMarkerExporter {
         downloadPresentationXML();
         XMLParser parser = new XMLParser();
         allSlides = parser.parseXML("tmp/markerSource.xml");
+        generateMarkerFile();
+    }
+
+    private void generateMarkerFile() {
+        StringBuilder outputString = new StringBuilder();
         for(int i = 0; i < allSlides.size(); i++){
-            System.out.println(allSlides.get(i).getSlideName());
+            String timecodeString = transformTime(allSlides.get(i).getSlideTime());
+            outputString.append(timecodeString+"\t"+allSlides.get(i).getSlideName()+".png\r\n");
         }
+
+        System.out.println(outputString.toString());
+        PrintWriter writer = null;
+        try {
+            writer = new PrintWriter("output/"+presentationID+"-markers-vegas.txt", "UTF-8");
+            writer.print(outputString.toString());
+            writer.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private String transformTime(int slideTime) {
+        int hours = (int) Math.floor(slideTime / 3600.0);
+        int minutes = (int) Math.floor((slideTime % 3600) / 60);
+        int seconds = (slideTime - (3600 * hours) - (60*minutes));
+
+        String tmpString = "";
+
+        if (hours < 10)
+            tmpString += "0"+hours + ":";
+        else
+            tmpString += hours + ":";
+
+        if (minutes < 10)
+            tmpString += "0"+minutes + ":";
+        else
+            tmpString += minutes + ":";
+
+        if (seconds < 10)
+            tmpString += "0"+seconds + ":00";
+        else
+            tmpString += seconds + ":00";
+
+        return tmpString;
     }
 
     private boolean downloadPresentationXML(){
