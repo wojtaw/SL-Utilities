@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="httpmime-4.4.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/httpmime-4.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/java-json.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/httpasyncclient-4.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/java-json.jar!/" />
+    </SOURCES>
+  </library>
+</component>

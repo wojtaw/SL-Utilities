@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="wget-1.2.5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/wget-1.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/httpclient-win-4.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/httpclient-4.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/vget-1.0.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/httpcore-4.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-lang3-3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xstream-1.4.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
