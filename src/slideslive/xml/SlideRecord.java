@@ -19,4 +19,12 @@ public class SlideRecord {
     public int getSlideTime() {
         return slideTime;
     }
+
+    public void setSlideName(String name){
+        slideName = name;
+    }
+
+    public void setSlideTime(int time){
+        slideTime = time;
+    }
 }

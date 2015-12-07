@@ -116,7 +116,7 @@
       <file leaf-file-name="XMLCuter.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/slideslive/xml/XMLCuter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="0" selection-start="2076" selection-end="2076" vertical-scroll-proportion="0.66847235" vertical-offset="386" max-vertical-offset="2176">
+            <state line="47" column="34" selection-start="1309" selection-end="1309" vertical-scroll-proportion="0.51570964" vertical-offset="0" max-vertical-offset="1802">
               <folding />
             </state>
           </provider>
@@ -125,8 +125,13 @@
       <file leaf-file-name="SlideRecord.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/slideslive/xml/SlideRecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-              <folding />
+            <state line="23" column="25" selection-start="495" selection-end="495" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
+              <folding>
+                <element signature="e#468#469#0" expanded="true" />
+                <element signature="e#500#501#0" expanded="true" />
+                <element signature="e#541#542#0" expanded="true" />
+                <element signature="e#573#574#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,13 +147,13 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/slideslive/image/SlidesCrop.java" />
-        <option value="$PROJECT_DIR$/src/slideslive/xml/SlideRecord.java" />
         <option value="$PROJECT_DIR$/src/slideslive/xml/XMLParser.java" />
         <option value="$PROJECT_DIR$/src/slideslive/apps/VegasMarkerExporter.java" />
         <option value="$PROJECT_DIR$/src/slideslive/db/SlidesLiveDB.java" />
         <option value="$PROJECT_DIR$/src/com/github/axet/vget/vhs/VimeoParser.java" />
         <option value="$PROJECT_DIR$/src/slideslive/apps/OfflinePresentationCreator.java" />
         <option value="$PROJECT_DIR$/src/slideslive/start/Main.java" />
+        <option value="$PROJECT_DIR$/src/slideslive/xml/SlideRecord.java" />
         <option value="$PROJECT_DIR$/src/slideslive/xml/XMLCuter.java" />
       </list>
     </option>
@@ -862,13 +867,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/slideslive/xml/SlideRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/slideslive/start/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="47" column="26" selection-start="1425" selection-end="1425" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1173">
@@ -876,9 +874,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/slideslive/xml/SlideRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="25" selection-start="495" selection-end="495" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
+          <folding>
+            <element signature="e#468#469#0" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
+            <element signature="e#573#574#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/slideslive/xml/XMLCuter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="0" selection-start="2076" selection-end="2076" vertical-scroll-proportion="0.66847235" vertical-offset="386" max-vertical-offset="2176">
+        <state line="47" column="34" selection-start="1309" selection-end="1309" vertical-scroll-proportion="0.51570964" vertical-offset="0" max-vertical-offset="1802">
           <folding />
         </state>
       </provider>

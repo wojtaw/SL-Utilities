@@ -41,7 +41,7 @@ public class XMLCuter {
         this.cStart = cutStart;
         this.cEnd = cutEnd;
 
-        if(cStart.length == cEnd.length){
+        if(cStart.length != cEnd.length){
             System.out.println("Fields are not same size");
             return false;
         }
@@ -55,19 +55,20 @@ public class XMLCuter {
         allSlides = parser.parseXML(xmlDocument);
 
         createRightTiming();
+        createFinalString();
 
-        /*
         try {
             writeXMLFile();
         } catch (IOException e) {
             output.printErr(""+e.getStackTrace());
             return false;
         }
-        */
+
         return true;
     }
-	
-	private boolean writeXMLFile() throws IOException {
+
+
+    private boolean writeXMLFile() throws IOException {
 		System.out.print(resultXMLString.toString());
 		
 		Writer out = new OutputStreamWriter(new FileOutputStream(xmlDocument, false), "UTF8");			
@@ -89,54 +90,31 @@ public class XMLCuter {
                 if(tmp.getSlideTime() > cStart[i] && tmp.getSlideTime() < cEnd[i]){
                     iterator.remove();
                     output.printLog(tmp.getSlideTime()+" was removed, because is part of cut "+cStart[i]+" - "+cEnd[i]);
-                }else if(tmp.getSlideTime() > cStart[i]){
-
+                }else if(tmp.getSlideTime() >= cEnd[i]){
+                    tmp.setSlideTime(tmp.getSlideTime() - cutSizeInSeconds);
                 }
             }
         }
 
-
-
         //Put zero in first slide
+        allSlides.get(0).setSlideTime(0);
+    }
+
+    private void createFinalString() {
+        resultXMLString.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<videoContent>\n");
+        int newOrderID = 1;
+        Iterator<SlideRecord> iterator = allSlides.iterator();
+        while(iterator.hasNext()){
+            SlideRecord tmp = iterator.next();
+            resultXMLString.append("\t<slide>\n");
+            resultXMLString.append("\t\t<orderId>"+newOrderID+"</orderId>\n");
+            resultXMLString.append("\t\t<timeSec>"+tmp.getSlideTime()+"</timeSec>\n");
+            resultXMLString.append("\t\t<slideName>"+tmp.getSlideName()+"</slideName>\n");
+            resultXMLString.append("\t</slide>\n");
+            newOrderID++;
+        }
 
         resultXMLString.append("</videoContent>");
         System.out.println(resultXMLString.toString());
     }
 }
-
-
-
-    /*
-    private void validateAndCreateXMLString() {
-		//Put zero in first slide
-		xmlTimes[0] = 0;
-
-
-		int newOrderID = 1;
-		int currentCutIndex = 0;
-
-
-		resultXMLString.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<videoContent>\n");
-		for (int i = 0; i < xmlTimes.length; i++) {
-			if(xmlTimes[i] > cuts[currentCutIndex] && currentCutIndex < cuts.length-1) currentCutIndex++;
-
-			//Do the calculations
-			xmlTimes[i] -= delays[currentCutIndex];
-
-			//If time is cut out because of pause, continue with this loop
-			if(currentCutIndex > 0) System.out.println("Current "+xmlTimes[i]+" / "+cuts[currentCutIndex-1]);
-			if(currentCutIndex > 0 && xmlTimes[i] < cuts[currentCutIndex-1]){
-                System.out.println("Not"+currentCutIndex);
-            } else {
-				resultXMLString.append("\t<slide>\n");
-				resultXMLString.append("\t\t<orderId>"+newOrderID+"</orderId>\n");
-				resultXMLString.append("\t\t<timeSec>"+xmlTimes[i]+"</timeSec>\n");
-				resultXMLString.append("\t\t<slideName>"+transformedNames[i]+"</slideName>\n");
-				resultXMLString.append("\t</slide>\n");
-				newOrderID++;
-			}
-		}
-		resultXMLString.append("</videoContent>");
-        System.out.println(resultXMLString.toString());
-	}
-	*/
