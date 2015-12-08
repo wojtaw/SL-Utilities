@@ -83,6 +83,7 @@ public class XMLCuter {
         for(int i=0; i < cStart.length; i++){
             Iterator<SlideRecord> iterator = allSlides.iterator();
             int cutSizeInSeconds = cEnd[i] - cStart[i];
+            output.printLog(""+cutSizeInSeconds);
             if(cutSizeInSeconds <= 0) output.printErr("Suspicious cut size");
             while(iterator.hasNext()){
                 SlideRecord tmp = iterator.next();

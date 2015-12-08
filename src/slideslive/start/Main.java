@@ -51,8 +51,8 @@ public class Main {
         //String[] start = {"","","","","","","","","","","",""};
         //String[] end = {"","","","","","","","","","","",""};
 
-        String[] start = {"0:08:39","0:18:12","0:26:29","0:27:57","0:29:29","0:32:45","0:36:01","0:37:10","0:38:11","0:38:41","0:40:52","0:51:29"};
-        String[] end = {"0:08:48","0:18:28","0:26:49","0:29:00","0:31:09","0:33:40","0:36:11","0:37:20","0:38:23","0:39:21","0:41:05","0:51:54"};
+        String[] start = {"1:01:14","1:04:02","1:06:28","1:10:52","1:21:08","1:27:42","1:37:27","1:49:00"};
+        String[] end = {"1:01:23","1:04:25","1:08:56","1:11:23","1:23:23","1:32:19","1:41:15","1:50:54"};
 
         TimecodeFormatter timecodeFormatter = new TimecodeFormatter(outputWriter);
         int[] cutStart = timecodeFormatter.getSecondsArrayFromHHMMSSArray(start);
@@ -65,10 +65,9 @@ public class Main {
 
         //XMLTransformer xmlTransformer = new XMLTransformer(outputWriter, "C:/vojtaciml/TMP/38891488.xml", 1315, 4538); // -1392
 
-        //If you put true, you define delays by length of each cut, if false, you specify exact delay to the original
-        XMLCuter xmlCuter = new XMLCuter(outputWriter, "C:\\Users\\WojtawDesktop\\Desktop\\38894829.xml");
-        xmlCuter.cutSpaces(cutStart, cutEnd);
         */
-	}
+        XMLCuter xmlCuter = new XMLCuter(outputWriter, "C:\\Users\\WojtawDesktop\\Desktop\\38894824.xml");
+        xmlCuter.cutSpaces(cutStart, cutEnd);
+    }
 }
 
